@@ -5,9 +5,6 @@ abstract class Instrument implements InstrumentInterface {
 	private String serialNumber, builder;
 	private double price;
 
-	public Instrument() {
-	}
-
 	// ----------------- SerialNumber -----------------
 	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
