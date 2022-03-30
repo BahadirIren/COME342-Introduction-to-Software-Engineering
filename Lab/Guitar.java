@@ -4,8 +4,8 @@ public class Guitar {
 	private String serialNumber, builder, model, type, topWood, backWood;
 	private double price;
 
-	public Guitar(String serialNumber, double price, String builder, String model, String type, String topWood,
-			String backWood) {
+	public Guitar(String serialNumber, double price, String builder, String model, String type, String backWood,
+			String topWood) {
 
 		this.serialNumber = serialNumber;
 		this.price = price;
