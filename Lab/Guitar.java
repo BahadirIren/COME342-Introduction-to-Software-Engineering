@@ -1,19 +1,19 @@
+import Enums.Builder;
+import Enums.Type;
+import Enums.Wood;
 
-public class Guitar {
+class Guitar {
 
-	private String serialNumber, builder, model, type, topWood, backWood;
+	private String serialNumber;
 	private double price;
+	private GuitarSpec spec;
 
-	public Guitar(String serialNumber, double price, String builder, String model, String type, String backWood,
-			String topWood) {
+	public Guitar(String serialNumber, double price, Builder builder, String model, Type type, Wood backWood,
+			Wood topWood) {
 
 		this.serialNumber = serialNumber;
 		this.price = price;
-		this.builder = builder;
-		this.model = model;
-		this.type = type;
-		this.topWood = topWood;
-		this.backWood = backWood;
+		spec = new GuitarSpec(builder, model, type, backWood, topWood);
 	}
 
 	// ----------------- Price -----------------
@@ -25,34 +25,13 @@ public class Guitar {
 		return price;
 	}
 
-	// ----------------- Builder -----------------
-	public String getBuilder() {
-		return builder;
-	}
-
-	// ----------------- Model -----------------
-	public String getModel() {
-		return model;
-	}
-
-	// ----------------- Type -----------------
-	public String getType() {
-		return type;
-	}
-
-	// ----------------- TopWood -----------------
-	public String getTopWood() {
-		return topWood;
-	}
-
-	// ----------------- BackWood -----------------
-	public String getBackWood() {
-		return backWood;
-	}
-
 	// ----------------- SerialNumber -----------------
 	public String getSerialNumber() {
 		return serialNumber;
+	}
+
+	public GuitarSpec getSpec() {
+		return spec;
 	}
 
 }
