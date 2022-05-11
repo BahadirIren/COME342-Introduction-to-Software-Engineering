@@ -12,14 +12,11 @@ public class FindGuitarTester {
 		initializeInventory(inventory);
 
 		// not found case
-//		GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ACOUSTIC, Wood.ADIRONDACK,
+//		GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ACOUSTIC, 20, Wood.ADIRONDACK,
 //				Wood.ADIRONDACK);
 
 		// found case
-//		GuitarSpec whatErinLikes = new GuitarSpec(Builder.COLLINGS, "CJ", Type.ACOUSTIC, Wood.INDIAN_ROSEWOOD,
-//				Wood.SITKA);
-
-		GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER,
+		GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, 6, Wood.ALDER,
 				Wood.ALDER);
 
 		List<Guitar> matchingGuitars = inventory.search(whatErinLikes);
@@ -42,12 +39,20 @@ public class FindGuitarTester {
 	}
 
 	private static void initializeInventory(Inventory inventory) {
-		inventory.addGuitar("11277", 3999.95, Builder.COLLINGS, "CJ", Type.ACOUSTIC, Wood.INDIAN_ROSEWOOD, Wood.SITKA);
-		inventory.addGuitar("V95693", 1499.95, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
-		inventory.addGuitar("V9512", 1549.95, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
-		inventory.addGuitar("122784", 5495.95, Builder.MARTIN, "D-18", Type.ACOUSTIC, Wood.MAHOGANY, Wood.ADIRONDACK);
-		inventory.addGuitar("76531", 6295.95, Builder.MARTIN, "OM-28", Type.ACOUSTIC, Wood.BRAZILIAN_ROSEWOOD,
-				Wood.ADIRONDACK);
 
+		inventory.addGuitar("11277", 3999.95,
+				new GuitarSpec(Builder.COLLINGS, "CJ", Type.ACOUSTIC, 5, Wood.INDIAN_ROSEWOOD, Wood.SITKA));
+
+		inventory.addGuitar("V95693", 1499.95,
+				new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, 6, Wood.ALDER, Wood.ALDER));
+
+		inventory.addGuitar("V9512", 1549.95,
+				new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, 6, Wood.ALDER, Wood.ALDER));
+
+		inventory.addGuitar("122784", 5495.95,
+				new GuitarSpec(Builder.MARTIN, "D-18", Type.ACOUSTIC, 10, Wood.MAHOGANY, Wood.ADIRONDACK));
+
+		inventory.addGuitar("76531", 6295.95,
+				new GuitarSpec(Builder.MARTIN, "OM-28", Type.ACOUSTIC, 10, Wood.BRAZILIAN_ROSEWOOD, Wood.ADIRONDACK));
 	}
 }

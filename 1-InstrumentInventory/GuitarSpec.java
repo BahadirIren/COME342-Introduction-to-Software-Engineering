@@ -2,36 +2,35 @@ import Enums.Builder;
 import Enums.Type;
 import Enums.Wood;
 
-public class GuitarSpec {
+public class GuitarSpec extends InstrumentSpec {
 
-	private Builder builder;
-	private String model;
-	private Type type;
-	private Wood topWood, backWood;
+	private int numString;
 
-	public GuitarSpec(Builder builder, String model, Type type, Wood backWood, Wood topWood) {
-		this.builder = builder;
-		this.model = model;
-		this.type = type;
-		this.topWood = topWood;
-		this.backWood = backWood;
+	public GuitarSpec(Builder builder, String model, Type type, int numString, Wood backWood, Wood topWood) {
+		super.setBuilder(builder);
+		super.setModel(model);
+		super.setType(type);
+		super.setTopWood(topWood);
+		super.setBackWood(backWood);
+		this.numString = numString;
 
 	}
 
 	public Builder getBuilder() {
-		return builder;
+		return super.getBuilder();
 	}
 
 	public void setBuilder(Builder builder) {
-		this.builder = builder;
+		super.setBuilder(builder);
 	}
 
 	public String getModel() {
-		return model;
+		return super.getModel();
 	}
 
 	public void setModel(String model) {
-		this.model = model;
+		super.setModel(model);
+		;
 	}
 
 	public Type getType() {
@@ -50,6 +49,10 @@ public class GuitarSpec {
 		this.topWood = topWood;
 	}
 
+	public int getNumString() {
+		return numString;
+	}
+
 	public Wood getBackWood() {
 		return backWood;
 	}
@@ -58,4 +61,16 @@ public class GuitarSpec {
 		this.backWood = backWood;
 	}
 
+	public boolean matches(GuitarSpec otherSpec) {
+
+		if (!super.matches(otherSpec)) {
+			return false;
+		}
+
+		if (numString != otherSpec.getNumString()) {
+			return false;
+		}
+
+		return true;
+	}
 }
