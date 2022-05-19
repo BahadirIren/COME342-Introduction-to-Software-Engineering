@@ -2,75 +2,61 @@ import Enums.Builder;
 import Enums.Type;
 import Enums.Wood;
 
-public class GuitarSpec extends InstrumentSpec {
+public class GuitarSpec {
 
-	private int numString;
+	private Builder builder;
+	private String model;
+	private Type type;
+	private int numStrings;
+	private Wood backWood;
+	private Wood topWood;
 
-	public GuitarSpec(Builder builder, String model, Type type, int numString, Wood backWood, Wood topWood) {
-		super.setBuilder(builder);
-		super.setModel(model);
-		super.setType(type);
-		super.setTopWood(topWood);
-		super.setBackWood(backWood);
-		this.numString = numString;
-
+	public GuitarSpec(Builder builder, String model, Type type, int numStrings, Wood backWood, Wood topWood) {
+		this.builder = builder;
+		this.model = model;
+		this.type = type;
+		this.numStrings = numStrings;
+		this.backWood = backWood;
+		this.topWood = topWood;
 	}
 
 	public Builder getBuilder() {
-		return super.getBuilder();
-	}
-
-	public void setBuilder(Builder builder) {
-		super.setBuilder(builder);
+		return builder;
 	}
 
 	public String getModel() {
-		return super.getModel();
-	}
-
-	public void setModel(String model) {
-		super.setModel(model);
-		;
+		return model;
 	}
 
 	public Type getType() {
 		return type;
 	}
 
-	public void setType(Type type) {
-		this.type = type;
-	}
-
-	public Wood getTopWood() {
-		return topWood;
-	}
-
-	public void setTopWood(Wood topWood) {
-		this.topWood = topWood;
-	}
-
-	public int getNumString() {
-		return numString;
+	public int getNumStrings() {
+		return numStrings;
 	}
 
 	public Wood getBackWood() {
 		return backWood;
 	}
 
-	public void setBackWood(Wood backWood) {
-		this.backWood = backWood;
+	public Wood getTopWood() {
+		return topWood;
 	}
 
 	public boolean matches(GuitarSpec otherSpec) {
-
-		if (!super.matches(otherSpec)) {
+		if (builder != otherSpec.builder)
 			return false;
-		}
-
-		if (numString != otherSpec.getNumString()) {
+		if ((model != null) && (!model.equals("")) && (!model.toLowerCase().equals(otherSpec.model.toLowerCase())))
 			return false;
-		}
-
+		if (type != otherSpec.type)
+			return false;
+		if (numStrings != otherSpec.numStrings)
+			return false;
+		if (backWood != otherSpec.backWood)
+			return false;
+		if (topWood != otherSpec.topWood)
+			return false;
 		return true;
 	}
 }

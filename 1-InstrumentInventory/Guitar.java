@@ -11,16 +11,10 @@ class Guitar {
 		this.spec = spec;
 	}
 
-	// ----------------- Price -----------------
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
 	public double getPrice() {
 		return price;
 	}
 
-	// ----------------- SerialNumber -----------------
 	public String getSerialNumber() {
 		return serialNumber;
 	}

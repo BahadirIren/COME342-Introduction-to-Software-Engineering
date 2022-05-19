@@ -16,23 +16,6 @@ public class Inventory {
 
 	}
 
-	public Guitar getGuitar(String serialNumber) {
-
-		// search for a guitar that matches serialNumbers
-		for (Guitar guitar : guitars) {
-
-			if (guitar.getSerialNumber() == serialNumber) {
-
-				return guitar;
-
-			}
-		}
-
-		// if guitar that matches serialNumbers did not found
-		return null;
-
-	}
-
 	public List<Guitar> search(GuitarSpec searchSpec) {
 		List<Guitar> matchingGuitarList = new LinkedList<Guitar>();
 
@@ -44,18 +27,6 @@ public class Inventory {
 			}
 		}
 		return matchingGuitarList;
-	}
-
-	public void removeGuitar(Guitar guitar) {
-		guitars.remove(guitar);
-	}
-
-	public void removeAll() {
-		guitars.clear();
-	}
-
-	public List<Guitar> getList() {
-		return guitars;
 	}
 
 }

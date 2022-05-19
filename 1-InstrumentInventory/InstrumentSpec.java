@@ -9,55 +9,36 @@ public abstract class InstrumentSpec {
 	private Type type;
 	private Wood topWood, backWood;
 
-	public InstrumentSpec(Builder builder, String model, Type type, Wood topWood, Wood backWood) {
-		this.setBuilder(builder);
-		this.setModel(model);
-		this.setType(type);
-		this.setTopWood(topWood);
-		this.setBackWood(backWood);
+	public InstrumentSpec(Builder builder, String model, Type type, Wood backWood, Wood topWood) {
+		this.builder = builder;
+		this.model = model;
+		this.type = type;
+		this.backWood = backWood;
+		this.topWood = topWood;
 	}
 
 	public Builder getBuilder() {
 		return builder;
 	}
 
-	public void setBuilder(Builder builder) {
-		this.builder = builder;
-	}
-
 	public String getModel() {
 		return model;
-	}
-
-	public void setModel(String model) {
-		this.model = model;
 	}
 
 	public Type getType() {
 		return type;
 	}
 
-	public void setType(Type type) {
-		this.type = type;
-	}
-
 	public Wood getTopWood() {
 		return topWood;
-	}
-
-	public void setTopWood(Wood topWood) {
-		this.topWood = topWood;
 	}
 
 	public Wood getBackWood() {
 		return backWood;
 	}
 
-	public void setBackWood(Wood backWood) {
-		this.backWood = backWood;
-	}
-
 	public boolean matches(InstrumentSpec otherSpec) {
+
 		if (getBuilder() != otherSpec.getBuilder()) {
 			return false;
 		}
