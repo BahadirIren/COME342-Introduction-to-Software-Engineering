@@ -1,9 +1,9 @@
 
-public class Mandolin extends Instrument { // done complete extends
+public class Mandolin extends Instrument {
 
 	public Mandolin(String serialNumber, double price, InstrumentSpec spec) {
 		//
-		super(serialNumber, price, spec); // done complete the constructor
+		super(serialNumber, price, spec);
 	}
 
 	@Override

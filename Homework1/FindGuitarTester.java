@@ -16,15 +16,21 @@ public class FindGuitarTester {
 
 		getUserNameFromUser();
 
-		// if user likes guitar
-		GuitarSpec whatUserLikes = new GuitarSpec(Builder.COLLINGS, "CJ", Type.ACOUSTIC, 6, Wood.INDIAN_ROSEWOOD,
-				Wood.ALDER);
+		List<Instrument> matchingInstruments = null;
 
-		// if user likes mandolin
-//		MandolinSpec whatUserLikes = new MandolinSpec(Builder.COLLINGS, "CJ", Type.ACOUSTIC, Style.A,
-//				Wood.INDIAN_ROSEWOOD, Wood.ALDER);
+		boolean testGuitar = true;
+		if (testGuitar) {
+			// if user likes guitar
+			GuitarSpec whatUserLikes = new GuitarSpec(Builder.COLLINGS, "CJ", Type.ACOUSTIC, 6, Wood.INDIAN_ROSEWOOD,
+					Wood.ALDER);
+			matchingInstruments = inventory.search(whatUserLikes);
 
-		List<Instrument> matchingInstruments = inventory.search(whatUserLikes);
+		} else {
+			// if user likes mandolin
+			MandolinSpec whatUserLikes = new MandolinSpec(Builder.COLLINGS, "CJ", Type.ACOUSTIC, Style.A,
+					Wood.INDIAN_ROSEWOOD, Wood.ALDER);
+			matchingInstruments = inventory.search(whatUserLikes);
+		}
 
 		printInstruments(matchingInstruments);
 
@@ -34,7 +40,7 @@ public class FindGuitarTester {
 		inventory.addInstrument("11277", 3999.95,
 				new GuitarSpec(Builder.COLLINGS, "CJ", Type.ACOUSTIC, 6, Wood.INDIAN_ROSEWOOD, Wood.ALDER));
 		inventory.addInstrument("11333", 7000.95,
-				new GuitarSpec(Builder.COLLINGS, "CJ", Type.ACOUSTIC, 7, Wood.INDIAN_ROSEWOOD, Wood.ALDER));
+				new GuitarSpec(Builder.COLLINGS, "CJ", Type.ACOUSTIC, 6, Wood.INDIAN_ROSEWOOD, Wood.ALDER));
 		inventory.addInstrument("V95693", 1499.95,
 				new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, 7, Wood.ALDER, Wood.ALDER));
 		inventory.addInstrument("V9512", 1549.95,

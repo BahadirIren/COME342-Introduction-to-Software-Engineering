@@ -20,9 +20,10 @@ public class GuitarSpec extends InstrumentSpec {
 	public boolean matches(InstrumentSpec otherSpec) {
 		if (!super.matches(otherSpec))
 			return false;
-		// done complete the if blocks
-		if (!(otherSpec instanceof GuitarSpec)) // done look at the MandolinSpec for help
+
+		if (!(otherSpec instanceof GuitarSpec))
 			return false;
+
 		if (numString != ((GuitarSpec) otherSpec).getNumString())
 			return false;
 

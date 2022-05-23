@@ -7,27 +7,37 @@ public class Inventory {
 
 	public void addInstrument(String serialNumber, double price, InstrumentSpec spec) {
 
-		if (spec instanceof GuitarSpec) // done check the spec if it is from GuitarSpec
-		{
-			inventory.add(new Guitar(serialNumber, price, spec)); // done complete the block
+		if (spec instanceof GuitarSpec) {
+			inventory.add(new Guitar(serialNumber, price, spec));
 
-		} else if (spec instanceof MandolinSpec) // done check the speck if it is from MandolinSpec
-		{
-			inventory.add(new Mandolin(serialNumber, price, spec)); // done complete the block
+		} else if (spec instanceof MandolinSpec) {
+			inventory.add(new Mandolin(serialNumber, price, spec));
 		}
 	}
 
 	public Instrument get(String serialNumber) {
-		for (Instrument instrument : inventory) // done update the for loop
-		{
+		for (Instrument instrument : inventory) {
 			if (instrument.getSerialNumber().equals(serialNumber))
 				return instrument;
 		}
 		return null;
 	}
 
-	///// done you will write two different search functions
-	///// done for guitar and mandolin
+	public List<Instrument> search(GuitarSpec searchSpec) {
+		List<Instrument> matchingGuitars = new LinkedList<Instrument>();
+
+		for (Instrument instrument : inventory) {
+
+			if (instrument instanceof Guitar) {
+				Guitar guitar = (Guitar) instrument;
+
+				if (guitar.getSpec().matches(searchSpec))
+					matchingGuitars.add(guitar);
+			}
+
+		}
+		return matchingGuitars;
+	}
 
 	public List<Instrument> search(MandolinSpec searchSpec) {
 		List<Instrument> matchingMandolins = new LinkedList<Instrument>();
@@ -44,24 +54,5 @@ public class Inventory {
 
 		return matchingMandolins;
 	}
-
-	public List<Instrument> search(GuitarSpec searchSpec) {
-		List<Instrument> matchingGuitars = new LinkedList<Instrument>();
-
-		for (Instrument instrument : inventory) {
-
-			if (instrument instanceof Guitar) {
-				Guitar guitar = (Guitar) instrument; /////// done use the casting at the right hand side
-
-				if (guitar.getSpec().matches(searchSpec)) // done complete this line (its similar to last week code)
-					matchingGuitars.add(guitar);
-			}
-
-		}
-		return matchingGuitars;
-	}
-
-	// done right the search function for Mandolin.
-	// done look at the above function for help.
 
 }
