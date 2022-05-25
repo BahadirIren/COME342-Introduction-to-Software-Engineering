@@ -18,6 +18,7 @@ public class GuitarSpec extends InstrumentSpec {
 
 	@Override
 	public boolean matches(InstrumentSpec otherSpec) {
+		
 		if (!super.matches(otherSpec))
 			return false;
 

@@ -8,10 +8,10 @@ public class Inventory {
 	public void addInstrument(String serialNumber, double price, InstrumentSpec spec) {
 
 		if (spec instanceof GuitarSpec) {
-			inventory.add(new Guitar(serialNumber, price, spec));
+			inventory.add(new Guitar(serialNumber, price, (GuitarSpec) spec));
 
 		} else if (spec instanceof MandolinSpec) {
-			inventory.add(new Mandolin(serialNumber, price, spec));
+			inventory.add(new Mandolin(serialNumber, price, (MandolinSpec) spec));
 		}
 	}
 
@@ -23,6 +23,7 @@ public class Inventory {
 		return null;
 	}
 
+	// search for Guitars
 	public List<Instrument> search(GuitarSpec searchSpec) {
 		List<Instrument> matchingGuitars = new LinkedList<Instrument>();
 
@@ -39,6 +40,7 @@ public class Inventory {
 		return matchingGuitars;
 	}
 
+	// search for Mandolins
 	public List<Instrument> search(MandolinSpec searchSpec) {
 		List<Instrument> matchingMandolins = new LinkedList<Instrument>();
 
