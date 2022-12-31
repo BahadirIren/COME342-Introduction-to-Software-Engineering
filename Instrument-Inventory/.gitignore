@@ -1,11 +1,4 @@
-/Main.class
-/Guitar.class
-/Inventory.class
-/FindGuitarTester.class
-/Builder.class
-/Model.class
-/Wood.class
-/Type.class
-/GuitarSpec.class
-/Instrument.class
-/InstrumentSpec.class
+/bin/
+.classpath
+.project
+.settings
