@@ -1,10 +1,4 @@
-/Guitar.class
-/GuitarSpec.class
-/Instrument.class
-/InstrumentSpec.class
-/Inventory.class
-/Mandolin.class
-/MandolinSpec.class
-/FindGuitarTester.class
-/InstrumentType.class
-/FindInstrumentTester.class
+/bin/
+.classpath
+.project
+.settings
